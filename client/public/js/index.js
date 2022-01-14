@@ -1,3 +1,5 @@
+import '../css/main.css';
+
 const array = [{
     name: "AHMET",
     weight: 3
@@ -104,3 +106,10 @@ console.table(array);
 console.log(randomPlaylistGenerator(cumulativeWeights, array, advertorial));
 console.log('istatistik: ');
 console.table(makeStatistic(cumulativeWeights,array,advertorial));
+
+const errorState = (playlist) => {
+    playlist.forEach(element => {
+        if(element.percentageWeight > 50) return false; 
+    });
+    return true;
+}
