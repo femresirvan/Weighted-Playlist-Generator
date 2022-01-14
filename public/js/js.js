@@ -85,20 +85,22 @@ const randomPlaylistGenerator = (cumulativeWeights, playlist, advertorial) => {
 }
 
 const makeStatistic = (cumulativeWeights, playlist, advertorial) => {
-    let statistic = [0,0,0];
+    let statistic = [{weight:0,percentageWeight:0},{weight:0,percentageWeight:0},{weight:0,percentageWeight:0}];
+    console.log(statistic[0].weight);
     for(let i = 0;i<10;i++){
-        const {countsArr} = randomPlaylistGenerator(cumulativeWeights, playlist, advertorial);
+        let {countsArr} = randomPlaylistGenerator(cumulativeWeights, playlist, advertorial);
         countsArr.forEach((element,index) => {
-            statistic[index] += element;
+            if(!statistic[index].weight) statistic[index].weight = 0;
+            statistic[index].weight += element;
         });
     }
-    console.log(statistic)
     calculatePercentage(statistic);
     return statistic;
 }
+
 calculatePercentage(array);
 calculateProb(array);
 console.table(array);
-console.table(randomPlaylistGenerator(cumulativeWeights, array, advertorial));
+console.log(randomPlaylistGenerator(cumulativeWeights, array, advertorial));
 console.log('istatistik: ');
 console.table(makeStatistic(cumulativeWeights,array,advertorial));
