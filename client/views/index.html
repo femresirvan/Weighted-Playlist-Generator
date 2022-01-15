@@ -9,24 +9,40 @@
 </head>
 
 <body>
-    <div class="form-wrapper">
-        <label for="url">URL: </label><br>
-        <input type="text" name="url" id="url-input" class="input-wrapper"><br>
-        <label for="weight">Weight: </label><br>
-        <input type="text" name="weight" id="weight-input" class="input-wrapper"><br>
-        <button class="submit-btn-wrapper" id="submit-btn">Submit</button><br>
-        <button class="finish-btn-wrapper" id="finish-btn">See results!</button><br>
-        <label for="length">Advertorial Length </label><br>
-        <input type="text" name="length" id="length-input" class="length-wrapper"><br>
-        <button class="submit-btn-wrapper" id="length-submit-btn">Submit</button><br>
-    </div>
-    <div class="table-container">
-        <table class="table-wrapper" id="images-table">
-
-        </table>
-    </div>
-    <div class="carousel-wrapper" id="images-carousel">
-
+    <div class="main-wrapper">
+        <div id="image-form" class="form-wrapper">
+            <label for="url">URL: </label><br>
+            <input type="text" name="url" id="url-input" class="input-wrapper"><br>
+            <label for="weight">Weight: </label><br>
+            <input type="text" name="weight" id="weight-input" class="input-wrapper"><br>
+            <button class="submit-btn-wrapper" id="submit-btn">Submit</button><br>
+            <button class="finish-btn-wrapper" id="finish-btn">See results!</button><br>
+        </div>
+        <div id="length-form" class="form-wrapper">
+            <label for="length">Advertorial Length </label><br>
+            <input type="text" name="length" id="length-input" class="length-wrapper"><br>
+            <button class="submit-btn-wrapper" id="length-submit-btn">Submit</button><br>
+        </div>
+        <div class="playlist-table-container">
+            <table class="table-wrapper" id="playlist-table">
+                <tr>
+                    <th>URL</th>
+                    <th>Weight</th>
+                    <th>Percentage Weight</th>
+                </tr>
+            </table>
+        </div>
+        <div class="advertorial-table-container">
+            <table class="table-wrapper" id="advertorial-table">
+                <tr>
+                    <th>URL</th>
+                    <!-- <th>Weight</th> -->
+                </tr>
+            </table>
+        </div>
+        <div class="carousel-wrapper" id="images-carousel">
+            
+        </div>
     </div>
     <script src="../public/dist/js/main.js"></script>
 </body>
