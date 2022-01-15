@@ -1,3 +1,11 @@
 import '../css/main.css';
-import calc from './calculations/calc'
+import {
+    submitBtnHandler,
+    finishBtnHandler,
+    lengthSubmitBtnHandler
+} from './components/form';
+let playlist = new Array();
 
+submitBtnHandler(playlist);
+finishBtnHandler(playlist);
+lengthSubmitBtnHandler();

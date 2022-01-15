@@ -1,28 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <div class="form-wrapper">
-        <form>
-            <label for="url">URL: </label>
-            <input type="text" name="url" id="url-input" class="input-wrapper">
-            <label for="weight">Weight: </label>
-            <input type="text" name="weight" id="weight-input" class="input-wrapper">
-        </form>
+        <label for="url">URL: </label><br>
+        <input type="text" name="url" id="url-input" class="input-wrapper"><br>
+        <label for="weight">Weight: </label><br>
+        <input type="text" name="weight" id="weight-input" class="input-wrapper"><br>
+        <button class="submit-btn-wrapper" id="submit-btn">Submit</button><br>
+        <button class="finish-btn-wrapper" id="finish-btn">See results!</button><br>
+        <label for="length">Advertorial Length </label><br>
+        <input type="text" name="length" id="length-input" class="length-wrapper"><br>
+        <button class="submit-btn-wrapper" id="length-submit-btn">Submit</button><br>
     </div>
     <div class="table-container">
         <table class="table-wrapper" id="images-table">
-            
+
         </table>
     </div>
     <div class="carousel-wrapper" id="images-carousel">
 
     </div>
     <script src="../public/dist/js/main.js"></script>
+    <!-- <script src="../public/js/index.js"></script>
+    <script src="../public/js/calculations/calc.js"></script>
+    <script src="../public/js/components/form.js"></script>
+    <script src="../public/js/components/lists.js"></script>
+    <script src="../public/js/components/carousel.js"></script> -->
 </body>
+
 </html>

@@ -58,23 +58,23 @@ const randomIndexGenerator = (cumulativeWeights, playlist) => {
     }
 }
 
-const randomPlaylistGenerator = (cumulativeWeights, playlist, advertorialLength) => {
-    let counts = {}, countsArr=[],equalize, advertorial=new Array(advertorialLength);
+const randomPlaylistGenerator = (cumulativeWeights, playlist, advertorial) => {
+    let counts = {}, countsArr=[],equalize;
     for (let i = 0; i < advertorialLength; i++) {
         advertorial[i] = randomIndexGenerator(cumulativeWeights, playlist);
         for (let j = 0; j < playlist.length; j++) {
             if (advertorial[i] == playlist[j].name) equalize = playlist[j].probWeightInt;
         }
-        //DEBUG console.log(`${advertorial[i-1]} --- ${advertorial[i]} --- ${advertorial[i]}'si için equalize: ${equalize}`)
+        console.log(`${advertorial[i-1]} --- ${advertorial[i]} --- ${advertorial[i]}'si için equalize: ${equalize}`)
         while ((i != 0) && (advertorial[i - 1] == advertorial[i]) || (equalize <= counts[advertorial[i]])) {
             advertorial[i] = randomIndexGenerator(cumulativeWeights, playlist);
             for (let j = 0; j < playlist.length; j++) {
                 if (advertorial[i] == playlist[j].name) equalize = playlist[j].probWeightInt;
             }
-            //DEBUG console.log("HATA: while çalıştı. yeni equalize: "+ equalize);
+            console.log("HATA: while çalıştı. yeni equalize: "+ equalize);
         }
         counts[advertorial[i]] = (counts[advertorial[i]] || 0) + 1;
-        //DEBUG console.log(counts);
+        console.log(counts);
     }
     for(let i = 0; i<playlist.length;i++){
         if(counts[playlist[i].name]) countsArr[i] = counts[playlist[i].name];
@@ -82,46 +82,27 @@ const randomPlaylistGenerator = (cumulativeWeights, playlist, advertorialLength)
     }
     return {
         advertorial,
-        countsArr,
-        counts
+        countsArr
     }
 }
-function getKeyByValue(object, value) {
-    return Object.keys(object).find(key => object[key] === value);
-}
-const makeStatistic = (cumulativeWeights, playlist, advertorial) => {
-    let statistic = [];
+
+const makeStatistic = (cumulativeWeights, playlist, advertorialLength) => {
+    let statistic = [{weight:0,percentageWeight:0},{weight:0,percentageWeight:0},{weight:0,percentageWeight:0}];
+    console.log(statistic[0].weight);
     for(let i = 0;i<10;i++){
-        let {counts,countsArr} = randomPlaylistGenerator(cumulativeWeights, playlist, advertorial);
+        let {countsArr} = randomPlaylistGenerator(cumulativeWeights, playlist, advertorialLength);
         countsArr.forEach((element,index) => {
-            if(!statistic[index]) statistic.push({name:'',weight:0,percentageWeight:0})
+            if(!statistic[index].weight) statistic[index].weight = 0;
             statistic[index].weight += element;
-            statistic[index].name = getKeyByValue(counts,element);
         });
     }
     calculatePercentage(statistic);
     return statistic;
 }
 
-// calculatePercentage(array);
-// calculateProb(array);
-// console.table(array);
-// console.log(randomPlaylistGenerator(cumulativeWeights, array, advertorial));
-// console.log('STATISTIC ');
-// console.table(makeStatistic(cumulativeWeights,array,advertorial));
-
 const errorState = (playlist) => {
     playlist.forEach(element => {
         if(element.percentageWeight > 50) return false; 
     });
     return true;
-}
-
-module.exports = {
-    calculatePercentage,
-    calculateProb,
-    calcCumulativeWeights,
-    randomPlaylistGenerator,
-    makeStatistic,
-    errorState
 }
