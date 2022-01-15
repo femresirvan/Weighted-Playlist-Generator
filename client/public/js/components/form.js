@@ -30,7 +30,6 @@ carousel(["https://media.giphy.com/media/86ernxgCTJNATvy9Bk/giphy.gif",
 const finishBtnHandler = async (playlist) => {
     finishBtn.addEventListener('click', () => {
         let cumulativeWeights = new Array()
-        if (!advertorialLength) return false;
         playlist = calculateProb(playlist, advertorialLength);
         playlist = calculatePercentage(playlist);
         cumulativeWeights = calcCumulativeWeights(cumulativeWeights, playlist);
@@ -49,7 +48,7 @@ const lengthSubmitBtnHandler = async () => {
         advertorialLength = lengthInput.value;
         if (lengthInput.value) {
             lengthForm.style.display = 'none';
-            imageForm.style.display = 'flex';
+            imageForm.style.display = 'block';
         } else alert('Type smth!')
     })
 }

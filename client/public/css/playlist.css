@@ -1,0 +1,30 @@
+#image-form{
+    border: 1px solid var(--primary-color);
+    border-radius: 10px;
+    width: 50%;
+    padding: 2rem;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+#buttons{
+    margin-top: 1rem;
+    justify-content: space-around;
+}
+
+.image-label{
+    align-self: center;
+    width: 4rem;
+}
+
+#url-input{
+    width: 85%;
+}
+
+#weight-input{
+    width: 85%;
+}

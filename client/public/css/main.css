@@ -1,12 +1,90 @@
+:root{
+    --primary-color:  hsl(200, 81%, 12%);
+    --primary-light-color:  hsl(200, 81%, 50%);
+    --secondary-color: hsl(100, 72%, 55%); 
+}
+
+*{  
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    color: var(--primary-color);
+}
+
+.break {
+    flex-basis: 100%;
+    height: 0;
+  }
 
 .main-wrapper{
     display: flex;
-    width: 100vw;
-    height: 100vh;
+    width: 90vw;
+    height: 90vh;
+    margin: auto;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
+    /* border: 1px solid var(--primary-color); */
 }
-#length-form{
-    display: block;
+
+
+.input-wrapper{
+    all: unset;
+    width: 100%;
+    margin: 0.5rem 0px;
+    padding: 12px 5px;
+    border: 0px;
+    border-bottom: 1px solid var(--primary-color);
 }
+
+.input-wrapper:active{
+    
+}
+
+.submit-btn-wrapper{
+    all: unset;
+    margin: 0.5rem 0px;
+    padding: 12px 20px;
+    border: 1px solid var(--primary-color);
+    border-radius: 10px;
+    /* box-shadow: ; */
+}
+
+.finish-btn-wrapper{
+    display:inline;
+    all: unset;
+    margin: 0.5rem 0px;
+    padding: 12px 20px;
+    border: 1px solid var(--secondary-color);
+    border-radius: 10px;
+    color: var(--secondary-color);
+    /* box-shadow: ; */
+}
+
+.submit-btn-wrapper:hover{
+    border-radius: 10px;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.submit-btn-wrapper:active{
+    border: 1px solid var(--primary-color);
+    border-radius: 10px;
+    background-color: white;
+    color: var(--primary-color);
+}
+
+.finish-btn-wrapper:hover{
+    border-radius: 10px;
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.finish-btn-wrapper:active{
+    border: 1px solid var(--secondary-color);
+    border-radius: 10px;
+    background-color: white;
+    color: var(--secondary-color);
+}
+
+

@@ -6,22 +6,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <div class="main-wrapper">
         <div id="image-form" class="form-wrapper">
-            <label for="url">URL: </label><br>
-            <input type="text" name="url" id="url-input" class="input-wrapper"><br>
-            <label for="weight">Weight: </label><br>
-            <input type="text" name="weight" id="weight-input" class="input-wrapper"><br>
-            <button class="submit-btn-wrapper" id="submit-btn">Submit</button><br>
-            <button class="finish-btn-wrapper" id="finish-btn">See results!</button><br>
+            <div class="row">
+                <label class="image-label" for="url">URL: </label>
+                <input type="text" name="url" id="url-input" class="input-wrapper">
+            </div>
+            <div class="break"></div>
+            <div class="row">
+                <label class="image-label" for="weight">Weight: </label>
+                <input type="text" name="weight" id="weight-input" class="input-wrapper">
+            </div>
+            <div class="row" id="buttons">
+                <button class="submit-btn-wrapper" id="submit-btn">Submit</button>
+                <button class="finish-btn-wrapper" id="finish-btn">See results!</button>
+            </div>
+            <div class="break"></div>
+            
         </div>
         <div id="length-form" class="form-wrapper">
-            <label for="length">Advertorial Length </label><br>
-            <input type="text" name="length" id="length-input" class="length-wrapper"><br>
-            <button class="submit-btn-wrapper" id="length-submit-btn">Submit</button><br>
+            <label class="length-label" for="length">Advertorial Length </label>
+            <input type="text" name="length" id="length-input" class="input-wrapper">
+            <div class="break"></div>
+            <button class="submit-btn-wrapper" id="length-submit-btn">Submit</button>
         </div>
         <div class="playlist-table-container">
             <table class="table-wrapper" id="playlist-table">
@@ -41,7 +55,7 @@
             </table>
         </div>
         <div class="carousel-wrapper" id="images-carousel">
-            
+
         </div>
     </div>
     <script src="../public/dist/js/main.js"></script>

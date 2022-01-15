@@ -1,4 +1,6 @@
 import '../css/main.css';
+import '../css/length.css';
+import '../css/playlist.css';
 import {
     submitBtnHandler,
     finishBtnHandler,
