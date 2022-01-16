@@ -50,7 +50,7 @@ $ node app
 
 İsteğe Bağlı olarak istatistikleri aktif etme
 
-*!* Uyarı: Bu işlemden sonra CPU'nun herhangi bir thread'i overload oluyor bu yüzden deaktif ettim sebebini hala araştırıyorum.
+*!* Uyarı: Bu işlemden sonra CPU'nun herhangi bir core'u overload oluyor bu yüzden deaktif ettim sebebini hala araştırıyorum.
 
 - Webpack Kurulumu
 
