@@ -25,6 +25,7 @@ Bu uygulama ile reklam kuşakları, bir image olarak varsayılıp gerekli inputl
 - [x] Layout yapısı tasarlandı.
 - [x] JS ile DOM eventleri gerçekleştirildi.
 - [x] CSS ile styling yapıldı.
+- [x] Hatalı input kontrolü ve errorState() eklendi.
 - [ ] 10000kuşak generate edip istatistik oluşturulması yapıldı.
 ## 👨‍💻 Kurulum
 ### Ön ihtiyaçlar
