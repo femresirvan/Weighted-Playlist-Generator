@@ -19,6 +19,10 @@ Bu uygulama ile reklam kuşakları, bir image olarak varsayılıp gerekli inputl
 
 ## 👀 Özellikler
 
+
+https://user-images.githubusercontent.com/60824063/149669237-a71e886a-3340-448f-b493-e778da014b2f.mp4
+
+
 - [x] Random playlist generator için gerekli olan; playlist (içerisinde reklamları barındıran playlist; bu arrayde imageUrl(name), weight, oynatma yüzdeleri percentageWeight, aynı zamanda kuşak uzunluğuna göre 1 reklamda max ne kadar yer edinebileceğini belirten probWeight vs.),cumulativePlaylist (playlist weightleri 1,3,5 ise 1,4,9 olarak ele alan array), randomIndexGenerator() fonksiyonu, advertorial(reklam kuşağı arrayi), makeStatistics() fonksiyonu oluşturuldu.
 - [x] Algoritma test edildi.
 - [x] Webpack eklendi
@@ -74,7 +78,7 @@ console.table(statistics);
 
 ## Proje Yapısı
 
-![]()
+![Screenshot from 2022-01-16 19-26-05](https://user-images.githubusercontent.com/60824063/149669249-9ba0b7ed-babf-4ea4-a8e7-6a9d4e3e4758.png)
 
 - calc.js ile gerekli algoritmalar tasarlanmıştır.
 - carousel.js carousel için gerekli dom eventleri.
