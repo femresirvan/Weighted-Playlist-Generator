@@ -56,7 +56,7 @@ const finishBtnHandler = async (playlist) => {
         playlist = calculateProb(playlist, advertorialLength);
         playlist = calculatePercentage(playlist);
         cumulativeWeights = calcCumulativeWeights(cumulativeWeights, playlist);
-        // if(errorState(playlist)) alert('HATA BURAYI TANIMLA') 
+        if(errorState(playlist)) alert('Error: Weight definition error. Some weights are more than %50 for the sum of weights.') 
         const advertorialInfo = randomPlaylistGenerator(cumulativeWeights, playlist, advertorialLength);
         // const statistics = makeStatistic(cumulativeWeights, playlist, advertorialLength);
         console.table(playlist);
