@@ -1,5 +1,7 @@
 let imagesCarousel = document.querySelector('#images-carousel');
+
 imagesCarousel.style.display = 'none';
+
 const carousel = (advertorial) => {
     imagesCarousel.style.display = 'inline-block';
     let img = document.createElement('img'),
@@ -8,6 +10,9 @@ const carousel = (advertorial) => {
     img.src = advertorial[counter];
     counter++;
     setInterval(() => {
+        img.style.display = 'none';
+        img = document.createElement('img')
+        imagesCarousel.appendChild(img);
         img.src = advertorial[counter];
         counter++;
         if(counter == advertorial.length) counter = 0;

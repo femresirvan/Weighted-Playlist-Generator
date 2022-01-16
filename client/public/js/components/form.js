@@ -1,6 +1,17 @@
-const {randomPlaylistGenerator,calcCumulativeWeights,calculatePercentage,calculateProb,makeStatistic,errorState} = require("../calculations/calc");
-const {carousel} = require('./carousel');
-const {showTables} = require('./lists');
+const {
+    randomPlaylistGenerator,
+    calcCumulativeWeights,
+    calculatePercentage,
+    calculateProb,
+    makeStatistic,
+    errorState
+} = require("../calculations/calc");
+const {
+    carousel
+} = require('./carousel');
+const {
+    showTables
+} = require('./lists');
 let advertorialLength;
 const urlInput = document.querySelector('#url-input'),
     weightInput = document.querySelector('#weight-input'),
@@ -11,13 +22,25 @@ const urlInput = document.querySelector('#url-input'),
 imageForm = document.querySelector('#image-form');
 lengthForm = document.querySelector('#length-form');
 imageForm.style.display = 'none';
+
+
 const submitBtnHandler = (array) => {
     submitBtn.addEventListener('click', () => {
-        array.push({
-            name: urlInput.value,
-            weight: (weightInput.value * 1)
-        })
+        if (urlInput.value == '' || urlInput.value == null || weightInput.value == '' || weightInput.value == null) alert('TYPE CORRECTLY');
+        else {
+            if (isNaN(weightInput.value*1)) alert('TYPE CORRECTLY')
+            else {
+                array.push({
+                    name: urlInput.value,
+                    weight: (weightInput.value * 1)
+                })
+            }
+        }
+        urlInput.value = '';
+        weightInput.value = '';
+        //DEBUG
         console.log(array);
+
     })
 }
 
@@ -35,11 +58,13 @@ const finishBtnHandler = async (playlist) => {
         cumulativeWeights = calcCumulativeWeights(cumulativeWeights, playlist);
         // if(errorState(playlist)) alert('HATA BURAYI TANIMLA') 
         const advertorialInfo = randomPlaylistGenerator(cumulativeWeights, playlist, advertorialLength);
-        const statistics = makeStatistic(cumulativeWeights, playlist, advertorialLength);
+        // const statistics = makeStatistic(cumulativeWeights, playlist, advertorialLength);
         console.table(playlist);
         console.log(advertorialInfo);
-        console.table(statistics);
+        // console.table(statistics);
+        imageForm.style.display = 'none';
         carousel(advertorialInfo.advertorial);
+        showTables(playlist,advertorialInfo.advertorial);
     })
 }
 

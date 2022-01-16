@@ -8,8 +8,8 @@
     <title>Document</title>
     <!-- CDN -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -29,7 +29,7 @@
                 <button class="finish-btn-wrapper" id="finish-btn">See results!</button>
             </div>
             <div class="break"></div>
-            
+
         </div>
         <div id="length-form" class="form-wrapper">
             <label class="length-label" for="length">Advertorial Length </label>
@@ -37,25 +37,25 @@
             <div class="break"></div>
             <button class="submit-btn-wrapper" id="length-submit-btn">Submit</button>
         </div>
-        <div class="playlist-table-container">
+        <div class="tables-container">
+            <h3 style="text-align: center;">PLAYLIST</h3>
             <table class="table-wrapper" id="playlist-table">
                 <tr>
                     <th>URL</th>
                     <th>Weight</th>
                     <th>Percentage Weight</th>
+                    <th>Weight Prob</th>
+                    <th>Wieght Prob CEIL</th>
                 </tr>
             </table>
-        </div>
-        <div class="advertorial-table-container">
-            <table class="table-wrapper" id="advertorial-table">
-                <tr>
-                    <th>URL</th>
-                    <!-- <th>Weight</th> -->
-                </tr>
-            </table>
-        </div>
-        <div class="carousel-wrapper" id="images-carousel">
+            <h3 style="text-align: center;margin-top: 3rem;">URLS OF ADVERTORIAL IMAGES</h3>
+            <UL class="list-wrapper" id="advertorial-list">
+                
+            </UL>
 
+        </div>
+<div class="break-vertical"></div>
+        <div class="carousel-wrapper" id="images-carousel">
         </div>
     </div>
     <script src="../public/dist/js/main.js"></script>

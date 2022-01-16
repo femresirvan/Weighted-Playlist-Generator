@@ -15,6 +15,7 @@
     height: 0;
   }
 
+
 .main-wrapper{
     display: flex;
     width: 90vw;
@@ -27,6 +28,14 @@
     /* border: 1px solid var(--primary-color); */
 }
 
+.main-wrapper-result{
+    display: flex;
+    width: 90vw;
+    height: 90vh;
+    margin: auto;
+    justify-content: space-around;
+    /* border: 1px solid var(--primary-color); */
+}
 
 .input-wrapper{
     all: unset;

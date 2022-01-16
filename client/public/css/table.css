@@ -1,0 +1,17 @@
+.table-wrapper{
+    margin-top: 1rem;
+    text-align: center;
+    border-collapse: collapse;
+    border: 1px solid var(--primary-color);
+}
+
+.table-wrapper tr th{
+    padding: 10px 10px;
+    background-color: var(--primary-color);
+    color: white;
+    border: 1px solid #ddd;
+}
+.table-wrapper tr td{
+    padding: 10px 10px;
+    border: 1px solid #ddd;
+}
