@@ -34,7 +34,9 @@ https://user-images.githubusercontent.com/60824063/149669237-a71e886a-3340-448f-
 - [x] JS ile DOM eventleri gerçekleştirildi.
 - [x] CSS ile styling yapıldı.
 - [x] Hatalı input kontrolü ve errorState() eklendi.
-- [x] 10000kuşak generate edip istatistik oluşturulması yapıldı. *!* Burada önemli olan kavram istatistik için reklam kuşağındaki durumları biraz esnek tuttum. Eğer belirli koşullar sağlamıyorsa infinite loop'a giriyordu ben de 100 kez belirli koşul sağlamazsa o zaman maalesef arrayi doğru bastırma ifadesini kullandım.
+- [x] 10000kuşak generate edip istatistik oluşturulması yapıldı. 
+*!* Burada önemli olan kavram istatistik için reklam kuşağındaki durumları biraz esnek tuttum. Eğer belirli koşullar sağlamıyorsa infinite loop'a giriyordu ben de 100 kez belirli koşul sağlamazsa o zaman maalesef arrayi doğru bastırma ifadesini kullandım. 
+*!* Sonuç olarak algoritma %100 çalışmasa da hata payını minimuma indirdim.
 ## 👨‍💻 Kurulum
 ### Ön ihtiyaçlar
 
