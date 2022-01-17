@@ -84,7 +84,7 @@ const randomAdvertorialGenerator = (cumulativeWeights, playlist, advertorialLeng
             for (let j = 0; j < playlist.length; j++) {
                 if (advertorial[i] == playlist[j].name) equalize = playlist[j].probWeightInt;
             }
-            if(whileCounter == 15) break;
+            if(whileCounter == 100) break;
             //DEBUG console.log("HATA: while çalıştı. yeni equalize: "+ equalize);
         }
         isMin = false;
