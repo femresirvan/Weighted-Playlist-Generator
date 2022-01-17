@@ -19,18 +19,22 @@ Bu uygulama ile reklam kuşakları, bir image olarak varsayılıp gerekli inputl
 
 ## 👀 Özellikler
 
+### Kullanıcılar İçin
 
 https://user-images.githubusercontent.com/60824063/149669237-a71e886a-3340-448f-b493-e778da014b2f.mp4
 
+### İstatistikler İçin
 
-- [x] Random playlist generator için gerekli olan; playlist (içerisinde reklamları barındıran playlist; bu arrayde imageUrl(name), weight, oynatma yüzdeleri percentageWeight, aynı zamanda kuşak uzunluğuna göre 1 reklamda max ne kadar yer edinebileceğini belirten probWeight vs.),cumulativePlaylist (playlist weightleri 1,3,5 ise 1,4,9 olarak ele alan array), randomIndexGenerator() fonksiyonu, advertorial(reklam kuşağı arrayi), makeStatistics() fonksiyonu oluşturuldu.
+<!-- Link GELECEK -->
+
+- [x] Random advertorial generator için gerekli olan; playlist (içerisinde reklamları barındıran playlist; bu arrayde imageUrl(name), weight, oynatma yüzdeleri percentageWeight, aynı zamanda kuşak uzunluğuna göre 1 reklamda max ne kadar yer edinebileceğini belirten probWeight vs.),cumulativePlaylist (playlist weightleri 1,3,5 ise 1,4,9 olarak ele alan array), randomIndexGenerator() fonksiyonu, advertorial(reklam kuşağı arrayi), makeStatistics() fonksiyonu oluşturuldu.
 - [x] Algoritma test edildi.
 - [x] Webpack eklendi
 - [x] Layout yapısı tasarlandı.
 - [x] JS ile DOM eventleri gerçekleştirildi.
 - [x] CSS ile styling yapıldı.
 - [x] Hatalı input kontrolü ve errorState() eklendi.
-- [ ] 10000kuşak generate edip istatistik oluşturulması yapıldı.
+- [x] 10000kuşak generate edip istatistik oluşturulması yapıldı. *!* Burada önemli olan kavram istatistik için reklam kuşağındaki durumları biraz esnek tuttum. Eğer belirli koşullar sağlamıyorsa infinite loop'a giriyordu ben de 100 kez belirli koşul sağlamazsa o zaman maalesef arrayi doğru bastırma ifadesini kullandım.
 ## 👨‍💻 Kurulum
 ### Ön ihtiyaçlar
 
@@ -46,34 +50,6 @@ Dependency kurulumu ve node'un çalıştırılması
 ```bash
 $ npm i
 $ node app
-```
-
-İsteğe Bağlı olarak istatistikleri aktif etme
-
-*!* Uyarı: Bu işlemden sonra CPU'nun herhangi bir core'u overload oluyor bu yüzden deaktif ettim sebebini hala araştırıyorum.
-
-- Webpack Kurulumu
-
-```bash
-$ cd client
-$ npm i
-$ npm start
-```
-
-- Form.js dosyasında makeStatistics fonksiyonunu aktif etme 
-finishSubmitButton() fonksiyonundaki commentlenmiş bu alanları;
-```js
-➥ ~./client/public/components/form.js
-
-// const statistics = makeStatistic(cumulativeWeights, playlist, advertorialLength);
-// console.table(statistics);
-```
-   Uncomment edin
-```js
-➥ ~./client/public/components/form.js
-
-const statistics = makeStatistic(cumulativeWeights, playlist, advertorialLength);
-console.table(statistics);
 ```
 
 ## Proje Yapısı

@@ -1,5 +1,5 @@
 const {
-    randomPlaylistGenerator,
+    randomAdvertorialGenerator,
     calcCumulativeWeights,
     calculatePercentage,
     calculateProb,
@@ -26,9 +26,9 @@ imageForm.style.display = 'none';
 
 const submitBtnHandler = (array) => {
     submitBtn.addEventListener('click', () => {
-        if (urlInput.value == '' || urlInput.value == null || weightInput.value == '' || weightInput.value == null) alert('TYPE CORRECTLY');
+        if (urlInput.value == '' || urlInput.value == null || weightInput.value == '' || weightInput.value == null) return alert('TYPE CORRECTLY');
         else {
-            if (isNaN(weightInput.value*1)) alert('TYPE CORRECTLY')
+            if (isNaN(weightInput.value*1)) return alert('TYPE CORRECTLY')
             else {
                 array.push({
                     name: urlInput.value,
@@ -39,8 +39,8 @@ const submitBtnHandler = (array) => {
         urlInput.value = '';
         weightInput.value = '';
         //DEBUG
-        console.log(array);
-
+        // console.log(array);
+       
     })
 }
 
@@ -56,16 +56,18 @@ const finishBtnHandler = async (playlist) => {
         playlist = calculateProb(playlist, advertorialLength);
         playlist = calculatePercentage(playlist);
         cumulativeWeights = calcCumulativeWeights(cumulativeWeights, playlist);
-        if(errorState(playlist)) alert('Error: Weight definition error. Some weights are more than %50 for the sum of weights.') 
-        const advertorialInfo = randomPlaylistGenerator(cumulativeWeights, playlist, advertorialLength);
-        // const statistics = makeStatistic(cumulativeWeights, playlist, advertorialLength);
-        console.table(playlist);
-        console.log(advertorialInfo);
-        // console.table(statistics);
+        if(!errorState(playlist)) return alert('Error: Weight definition error. Some weights are more than %50 for the sum of weights.') 
+        const advertorialInfo = randomAdvertorialGenerator(cumulativeWeights, playlist, advertorialLength);
+        const statistics = makeStatistic(cumulativeWeights, playlist, advertorialLength);
+        // console.table(playlist);
+        // console.log(advertorialInfo);
+        console.log("%cİSTATİSTİKLER","color:yellow");
+        console.table(statistics);
         imageForm.style.display = 'none';
         carousel(advertorialInfo.advertorial);
         showTables(playlist,advertorialInfo.advertorial);
     })
+    
 }
 
 const lengthSubmitBtnHandler = async () => {
