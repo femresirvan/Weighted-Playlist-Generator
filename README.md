@@ -25,6 +25,8 @@ https://user-images.githubusercontent.com/60824063/149669237-a71e886a-3340-448f-
 
 ### İstatistikler İçin
 
+https://user-images.githubusercontent.com/60824063/149842952-dcf4326b-324e-4c1f-aad1-a472f7e879fa.mp4
+
 <!-- Link GELECEK -->
 
 - [x] Random advertorial generator için gerekli olan; playlist (içerisinde reklamları barındıran playlist; bu arrayde imageUrl(name), weight, oynatma yüzdeleri percentageWeight, aynı zamanda kuşak uzunluğuna göre 1 reklamda max ne kadar yer edinebileceğini belirten probWeight vs.),cumulativePlaylist (playlist weightleri 1,3,5 ise 1,4,9 olarak ele alan array), randomIndexGenerator() fonksiyonu, advertorial(reklam kuşağı arrayi), makeStatistics() fonksiyonu oluşturuldu.
