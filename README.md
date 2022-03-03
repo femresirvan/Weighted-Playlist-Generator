@@ -66,5 +66,3 @@ $ node app
 - form.js 2 tane form için gerekli dom eventleri.(Burada dikkat edilmesi gereken husus; diğer iki component de finishButtonHandler() ile çağrıldığı form.js'e common.js vasıtasıyla bağlanmasıdır.)
 - index.js programın çalıştığı ana kısım.
 - ~./dist/main.js bütün js/css dosyalarının babel ile derlendiği ve tek dosya haline getirildiği kısım. 
-
-> 🤝 Bana bu fırsatı tanıdığı için OMMA'ya çok teşekkür ederim 😊.
